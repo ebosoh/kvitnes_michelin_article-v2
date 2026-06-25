@@ -188,9 +188,14 @@ blockquote {
   line-height: 1.5;
 }
 
-/* ── IMAGE PLACEHOLDERS ── */
-.inline-image {
+/* ── IMAGE PLACEHOLDERS & ACTUAL IMAGES ── */
+.inline-image, .inline-image-wrap {
   margin: 36px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.inline-image {
   aspect-ratio: 3/2;
   background: var(--rule);
   display: flex;
@@ -199,7 +204,11 @@ blockquote {
   font-size: 13px;
   color: var(--muted);
   letter-spacing: 0.05em;
-  border-radius: 6px;
+}
+.inline-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .image-caption {
   font-family: 'Cormorant Garamond', Georgia, serif;
