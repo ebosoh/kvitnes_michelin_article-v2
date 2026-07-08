@@ -52,6 +52,66 @@ h1, h2, h3, blockquote {
   color: var(--gold); 
 }
 
+/* ── ANIMATED NEWS LINK ── */
+.news-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-left: 4px;
+  transition: color 0.3s;
+}
+
+.news-link::before {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 60%,
+    #C19B76 100%
+  );
+  animation: rotateBorder 3s linear infinite;
+  z-index: 1;
+}
+
+.news-link::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  background: var(--accent);
+  border-radius: 3px;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.news-link span {
+  position: relative;
+  z-index: 3;
+}
+
+.news-link:hover span {
+  color: #C19B76;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* ── HERO SECTION ── */
 .hero {
   background: var(--cream);
